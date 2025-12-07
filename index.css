@@ -1,0 +1,63 @@
+ *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* nav{
+            height: 100px;
+            width: 100vw;
+            background-color: burlywood;
+            transition: height 0.4s;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        } */
+        /* .ri-menu-line{
+            display: none;
+        } */
+        .container{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             background-image: url(./OIP.webp);
+        }
+        form{
+            height: 400px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 2px rgb(184, 184, 184);
+            padding-top: 20px;
+            padding-left: 22px;
+
+        }
+        .fields-container{
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0px;
+        }
+        .inputField{
+            width: 90%;
+            font-size: 20px;
+            outline: none;
+        }
+        #signUp{
+            font-size: 22px;
+            width: 90%;
+            background-color: rgb(166, 89, 239);
+            color: white;
+            border: 0;
+            border-radius: 5px;
+            height: 30px;
+        }
+        .requiredLabel{
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+        /* @media screen and (max-width: 500px){
+            .ri-menu-line{
+                display: inline;
+                font-size: 50px;
+            }
+        } */
