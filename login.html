@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+             background-image: url(https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1400&q=80);
+            /* width: 100vw; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 400px;
+            height: max-content;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 10px rgb(143 8 8);
+            padding-top: 20px;
+            padding-left: 20px;
+
+        }
+        .main-heading{
+            color: rgb(143 8 8);
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .feilds-container {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 15px;
+
+        }
+        .feilds-container label{
+            color: rgb(143 8 8);
+            font-size: 20px;
+        }
+
+        .inputField {
+            width: 90%;
+            height: 30px;
+            font-size: 20px;
+            background: none;
+            padding: 10px;
+            border-radius: 5px;
+            /* background remove */
+            /* border: none; */
+            /* optional */
+            outline: none;
+            /* blue outline remove */
+            border: 1px solid black;
+            /* stylish look */
+            color: black;
+        }
+        .inputField:focus {
+            background-color: transparent;
+        }
+         .password-box{
+            position: relative;
+         }
+         .password-box i {
+            position: absolute;
+            right: 38px;
+            top: 30px;
+            cursor: pointer;
+            color: black;
+         }
+        .requiredLabel {
+            color: rgb(143 8 8);
+            display: none;
+        }
+
+        #login {
+            font-size: 22px;
+            margin-bottom: 5px;
+            margin-top: 10px;
+            width: 90%;
+            background-color: rgb(143 8 8); 
+            /* color: white; */
+            border: 0;
+            border-radius: 5px;
+            height: 30px;
+        }
+        #login:hover{
+            color: white;
+        }
+
+        .sign-up-page {
+            height: 35px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .sign-up-page>p {
+            font-size: 20px;
+        }
+
+        .sign-up-page>a {
+            text-decoration: none;
+            color: rgb(143 8 8);
+            font-weight: bold;
+        }
+        .para{
+            color: rgb(143 8 8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h2 class="main-heading">LOGIN</h2>
+            <div class="feilds-container" >
+                <label for="username">username</label>
+                <input type="email" class="inputField" id="username">
+                <label class="requiredLabel">Username is required!</label>
+            </div>
+            <div class="feilds-container password-box">
+                <label for="password">password</label>
+                <input type="password" id="password" class="inputField">
+                <i class="fa-solid fa-eye" id="togglePassword"></i>
+                <label class="requiredLabel" id="passwordRequriedLable">password is required!</label>
+                <button id="login" type="submit">Log In</button>
+
+            </div>
+            <div class="sign-up-page">
+                <p class="para">don't have an account </p>
+                <a href="./index.html">Click here</a>
+            </div>
+        </form>
+        <script src="./login.js"></script>
+    </div>
+</body>
+
+</html>

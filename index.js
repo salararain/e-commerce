@@ -6,21 +6,66 @@ const emailFeild = document.querySelector('#email');
 const passwordFeild = document.querySelector('#password');
 const confirmPasswordFeild = document.querySelector('#ConfirmPassword');
 const form = document.querySelector('form');
+const firstNameRequriedLable = document.querySelectorAll(".requiredLabel")[0];
+const emailRequriedLable = document.querySelectorAll(".requiredLabel")[1];
+const passwordRequriedLable = document.querySelectorAll(".requiredLabel")[2];
 
-form.addEventListener('submit', function(event)  {
+form.addEventListener('submit', function (event) {
     event.preventDefault();
-    console.log(firstNameFeild.value);
-    console.log(lastNameFeild.value);
-    console.log(emailFeild.value);
-    console.log(passwordFeild.value);
-    console.log(confirmPasswordFeild.value);
-    if(passwordFeild.value !== confirmPasswordFeild.value){
-          alert('password not macth');
+
+    const passwordRegex = /^(?=.*\d).{8,}$/;
+
+    let isfirstNamecorrect = true;
+    let isemailcorrect = true;
+    let isPasswordcorrect = true;
+
+    // First name
+    if (firstNameFeild.value === '') {
+        firstNameRequriedLable.style.display = 'inline';
+        isfirstNamecorrect = false;
+    } else {
+        firstNameRequriedLable.style.display = 'none';
     }
-    else{
-        console.log(done)
+
+    // Email
+    if (emailFeild.value === '') {
+        emailRequriedLable.style.display = 'inline';
+        isemailcorrect = false;
+    } else {
+        emailRequriedLable.style.display = 'none';
     }
-})
+
+    // Password empty
+    if (passwordFeild.value === '') {
+        passwordRequriedLable.style.display = 'inline';
+        passwordRequriedLable.innerText = 'Password is required';
+        isPasswordcorrect = false;
+    }
+    // Password regex
+    else if (!passwordRegex.test(passwordFeild.value)) {
+        passwordRequriedLable.style.display = 'inline';
+        passwordRequriedLable.innerText =
+            'Password must be at least 8 chars and contain a number';
+        isPasswordcorrect = false;
+    } else {
+        passwordRequriedLable.style.display = 'none';
+
+    }
+    if (passwordFeild.value !== confirmPasswordFeild.value) {
+        passwordRequriedLable.style.display = 'inline';
+        passwordRequriedLable.innerText = 'password dose not macth'
+    }
+
+    // 🔴 PASSWORD MATCH CHECK (IMPORTANT)
+    if (isPasswordcorrect && passwordFeild.value !== confirmPasswordFeild.value) {
+        return; // ⛔ yahin code STOP ho jayega
+    }
+
+    // ✅ FINAL CHECK
+    if (isfirstNamecorrect && isemailcorrect && isPasswordcorrect) {
+        window.location.href = './home.html';
+    }
+});
 
 
 
