@@ -1,3 +1,4 @@
+
 'use strict'
 
 const firstNameFeild = document.querySelector('#firstName');
@@ -9,6 +10,7 @@ const form = document.querySelector('form');
 const firstNameRequriedLable = document.querySelectorAll(".requiredLabel")[0];
 const emailRequriedLable = document.querySelectorAll(".requiredLabel")[1];
 const passwordRequriedLable = document.querySelectorAll(".requiredLabel")[2];
+const icon = document.querySelectorAll('#togglePassword')
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -56,18 +58,42 @@ form.addEventListener('submit', function (event) {
         passwordRequriedLable.innerText = 'password dose not macth'
     }
 
-    // 🔴 PASSWORD MATCH CHECK (IMPORTANT)
+
     if (isPasswordcorrect && passwordFeild.value !== confirmPasswordFeild.value) {
-        return; // ⛔ yahin code STOP ho jayega
+        return; 
     }
 
-    // ✅ FINAL CHECK
+    
     if (isfirstNamecorrect && isemailcorrect && isPasswordcorrect) {
         window.location.href = './home.html';
     }
 });
+const toggleIcons = document.querySelector('#togglePassword');
+const togglePassword = document.querySelector('#togglepassword2');
 
+toggleIcons.addEventListener('click', () => {
+    if (passwordFeild.type === 'password') {
+        passwordFeild.type = 'text'
+        toggleIcons.classList.remove('fa-eye');
+        toggleIcons.classList.add('fa-eye-slash')
+    }
+    else {
+        passwordFeild.type = 'password'
+        toggleIcons.classList.remove('fa-eye-slash');
+        toggleIcons.classList.add('fa-eye');
+    }
+});
+togglePassword.addEventListener('click' , () =>{
+    if(confirmPasswordFeild.type === 'password'){
+        confirmPasswordFeild.type = 'text';
+          togglePassword.classList.remove('fa-eye');
+        togglePassword.classList.add('fa-eye-slash')
+    }
+    else{
+    confirmPasswordFeild.type = 'password';
+       togglePassword.classList.remove('fa-eye-slash');
+        togglePassword.classList.add('fa-eye');
+    }
 
-
-
-
+    
+})
