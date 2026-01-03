@@ -18,6 +18,7 @@ form.addEventListener('submit', function (event) {
     // username check
     if (userName.value === '') {
         userNameRequiredLabel.style.display = 'inline';
+        userNameRequiredLabel.style.color = 'white';
     } else {
         userNameRequiredLabel.style.display = 'none';
         isUserNameCorrect = true;
@@ -27,10 +28,12 @@ form.addEventListener('submit', function (event) {
     if (password.value === '') {
         passwordRequiredLabel.innerText = 'Password is required!';
         passwordRequiredLabel.style.display = 'inline';
+        passwordRequiredLabel.style.color = 'white'
     } else if (!passwordRegex.test(password.value)) {
         passwordRequiredLabel.innerText =
             'Password must be 8 chars, upper, lower, number & special char';
         passwordRequiredLabel.style.display = 'inline';
+        passwordRequiredLabel.style.color = 'white'
     } else {
         passwordRequiredLabel.style.display = 'none';
         isPasswordCorrect = true;
@@ -53,4 +56,3 @@ icon.addEventListener('click', () => {
         icon.classList.add('fa-eye');
     }
 });
-
