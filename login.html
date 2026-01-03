@@ -15,7 +15,7 @@
 
         .container {
             height: 100vh;
-             background-image: url(https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1400&q=80);
+            background-image: url(https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1400&q=80);
             /* width: 100vw; */
             display: flex;
             justify-content: center;
@@ -29,9 +29,11 @@
             box-shadow: 0px 0px 10px 10px rgb(143 8 8);
             padding-top: 20px;
             padding-left: 20px;
+            backdrop-filter: blur(5px);
 
         }
-        .main-heading{
+
+        .main-heading {
             color: rgb(143 8 8);
             text-align: center;
             font-size: 25px;
@@ -43,7 +45,8 @@
             margin: 10px 15px;
 
         }
-        .feilds-container label{
+
+        .feilds-container label {
             color: rgb(143 8 8);
             font-size: 20px;
         }
@@ -55,30 +58,29 @@
             background: none;
             padding: 10px;
             border-radius: 5px;
-            /* background remove */
-            /* border: none; */
-            /* optional */
             outline: none;
-            /* blue outline remove */
             border: 1px solid black;
-            /* stylish look */
-            color: black;
+            color: rgb(255, 255, 255);
         }
+
         .inputField:focus {
             background-color: transparent;
         }
-         .password-box{
+
+        .password-box {
             position: relative;
-         }
-         .password-box i {
+        }
+
+        .password-box i {
             position: absolute;
             right: 38px;
             top: 30px;
             cursor: pointer;
-            color: black;
-         }
+            color: rgb(255, 253, 253);
+        }
+
         .requiredLabel {
-            color: rgb(143 8 8);
+            color: rgb(255, 255, 255);
             display: none;
         }
 
@@ -87,13 +89,14 @@
             margin-bottom: 5px;
             margin-top: 10px;
             width: 90%;
-            background-color: rgb(143 8 8); 
+            background-color: rgb(143 8 8);
             /* color: white; */
             border: 0;
             border-radius: 5px;
             height: 30px;
         }
-        #login:hover{
+
+        #login:hover {
             color: white;
         }
 
@@ -115,7 +118,8 @@
             color: rgb(143 8 8);
             font-weight: bold;
         }
-        .para{
+
+        .para {
             color: rgb(143 8 8);
         }
     </style>
@@ -125,7 +129,7 @@
     <div class="container">
         <form>
             <h2 class="main-heading">LOGIN</h2>
-            <div class="feilds-container" >
+            <div class="feilds-container">
                 <label for="username">username</label>
                 <input type="email" class="inputField" id="username">
                 <label class="requiredLabel">Username is required!</label>
